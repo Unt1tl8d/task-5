@@ -96,9 +96,6 @@ def main():
       for i in letters.keys():
         h = h.replace(i, letters[i])
       runic_skills.append(h)
-
-    
-
   for cards in range(10):
     skill = random.sample(runic_skills, 3)
     last_name = fake.last_name()
