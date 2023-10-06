@@ -101,18 +101,18 @@ def main():
     last_name = fake.last_name()
     first_name = fake.first_name()
     context = {
-      "first_name": first_name,
-      "last_name": last_name,
-      "town": fake.city(),
-      "job": fake.job(),
-      'strength': random.randint(3,18),
-      'agility': random.randint(3,18),
-      'endurance': random.randint(3,18),
-      'intelligence': random.randint(3,18),
-      'luck': random.randint(3,18),
-      'skill_1': skill[0],
-      'skill_2': skill[1],
-      'skill_3': skill[2],
+    "first_name": first_name,
+    "last_name": last_name,
+    "town": fake.city(),
+    "job": fake.job(),
+    'strength': random.randint(3,18),
+    'agility': random.randint(3,18),
+    'endurance': random.randint(3,18),
+    'intelligence': random.randint(3,18),
+    'luck': random.randint(3,18),
+    'skill_1': skill[0],
+    'skill_2': skill[1],
+    'skill_3': skill[2],
   }
     name = ("cards/{} {}.svg").format(last_name, first_name)
     file_operations.render_template("charsheet.svg", name, context)
