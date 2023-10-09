@@ -2,9 +2,9 @@ import file_operations
 from faker import Faker
 import random
 
-fake = Faker("ru_RU")
+FAKE = Faker("ru_RU")
 
-skills = [
+SKILLS = [
     'Стремительный прыжок',
     'Электрический выстрел',
     'Стремительный удар',
@@ -16,7 +16,7 @@ skills = [
 ]
 
 
-letters = {
+LETTERS = {
     'а': 'а͠',
     'б': 'б̋',
     'в': 'в͒͠',
@@ -87,24 +87,24 @@ letters = {
 }
 
 
-runic_skills = []
+RUNIC_SKILLS = []
 
 
 def main():
-    for h in skills:
-        if h in skills:
-            for i in letters.keys():
-                h = h.replace(i, letters[i])
-        runic_skills.append(h)
+    for h in SKILLS:
+        if h in SKILLS:
+            for i in LETTERS.keys():
+                h = h.replace(i, LETTERS[i])
+        RUNIC_SKILLS.append(h)
     for cards in range(10):
-        skill = random.sample(runic_skills, 3)
-        last_name = fake.last_name()
-        first_name = fake.first_name()
+        skill = random.sample(RUNIC_SKILLS, 3)
+        last_name = FAKE.last_name()
+        first_name = FAKE.first_name()
         context = {
             "first_name": first_name,
             "last_name": last_name,
-            "town": fake.city(),
-            "job": fake.job(),
+            "town": FAKE.city(),
+            "job": FAKE.job(),
             'strength': random.randint(3, 18),
             'agility': random.randint(3, 18),
             'endurance': random.randint(3, 18),
@@ -114,8 +114,9 @@ def main():
             'skill_2': skill[1],
             'skill_3': skill[2],
                     }
-    name = ("cards/{} {}.svg").format(last_name, first_name)
-    file_operations.render_template("charsheet.svg", name, context)
+        name = ("cards/{} {}.svg").format(last_name, first_name)
+        file_operations.render_template("charsheet.svg", name, context)
 
-    if __name__ == '__main__':
-        main()
+
+if __name__ == '__main__':
+    main()
