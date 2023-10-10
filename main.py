@@ -87,17 +87,15 @@ LETTERS = {
 }
 
 
-RUNIC_SKILLS = []
-
-
 def main():
+    translate_skills = []
     for h in SKILLS:
         if h in SKILLS:
             for i in LETTERS.keys():
                 h = h.replace(i, LETTERS[i])
-        RUNIC_SKILLS.append(h)
+        translate_skills.append(h)
     for cards in range(10):
-        skill = random.sample(RUNIC_SKILLS, 3)
+        skill = random.sample(translate_skills, 3)
         last_name = FAKE.last_name()
         first_name = FAKE.first_name()
         context = {
