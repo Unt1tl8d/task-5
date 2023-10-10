@@ -88,11 +88,11 @@ LETTERS = {
 
 
 def main():
-    translate_skills = []
     for h in SKILLS:
         if h in SKILLS:
             for i in LETTERS.keys():
                 h = h.replace(i, LETTERS[i])
+        translate_skills = []        
         translate_skills.append(h)
     for cards in range(10):
         skill = random.sample(translate_skills, 3)
