@@ -111,7 +111,7 @@ def main():
             'skill_1': skill[0],
             'skill_2': skill[1],
             'skill_3': skill[2],
-                    }
+        }
         name = ("cards/{} {}.svg").format(last_name, first_name)
         file_operations.render_template("charsheet.svg", name, context)
 
